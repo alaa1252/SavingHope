@@ -28,3 +28,13 @@
     font-weight: 600;
     letter-spacing: 1px;
 }
+
+.about p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contant span {
+    display: block;
+    margin-bottom: 10px;
+}
