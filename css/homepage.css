@@ -1,0 +1,41 @@
+.container {
+    background-image: url(https://islamonlive.in/wp-content/smush-webp/2023/11/children-of-gaza-768x512.jpg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.text-area {
+    position: absolute;
+    top: 70%;
+    left: 5%;
+    text-align: center;
+    color: white;
+    z-index: 1;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.text-area:hover {
+    transform: translate(-5%, -5%) scale(1.2);
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
