@@ -1,0 +1,30 @@
+.footer {
+    background-color: #003b4d;
+    color: #d4d4d4;
+    padding: 60px 40px 20px;
+    font-size: 16px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-heading {
+    color: #ffd166;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
