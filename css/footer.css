@@ -38,3 +38,26 @@
     display: block;
     margin-bottom: 10px;
 }
+
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #005f73;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.socials a:hover {
+    background-color: #ffd166;
+    color: #003b4d;
+    transform: translateY(-3px);
+}
