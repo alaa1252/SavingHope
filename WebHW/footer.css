@@ -1,0 +1,117 @@
+.footer {
+    background-color: #003b4d;
+    color: #d4d4d4;
+    padding: 60px 40px 20px;
+    font-size: 16px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+    padding: 0 15px;
+}
+
+.footer-heading {
+    color: #ffd166;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.about p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.contant span {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.socials {
+    margin-top: 20px;
+}
+
+.socials a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background-color: #005f73;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.socials a:hover {
+    background-color: #ffd166;
+    color: #003b4d;
+    transform: translateY(-3px);
+}
+
+.links ul, .support ul {
+    list-style: none;
+}
+
+.links ul, .support li {
+    margin-bottom: 12px;
+}
+
+.links a, .support a {
+    color: #d4d4d4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.links a:hover, .support a:hover {
+    color: #ffd166;
+    padding-left: 5px;
+}
+
+.newsletter p {
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.newsletter-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.newsletter-input::placeholder {
+    color: #d4d4d4;
+}
+
+.newsletter-btn {
+    background-color: #ffd166;
+    color: #003b4d;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+    background-color: #ffba08;
+    transform: translateY(-2px);
+}

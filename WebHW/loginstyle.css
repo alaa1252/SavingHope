@@ -1,0 +1,86 @@
+body {
+    background: url("https://media.istockphoto.com/id/1176742436/photo/closeup-of-a-poor-staring-hungry-orphan-boy-in-a-refugee-camp-with-sad-expression-on-his-face.jpg?s=612x612&w=0&k=20&c=te_a3PMQxR9TwNn3YREUWM71kWTHQ7Mx31Q_4xifP7I=");
+      background-size:cover;
+    font-family: sans-serif;
+}
+.login {
+    width: 450px;
+    height: 550px;
+    padding: 0px 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+    background: rgba(0,0,0,0.5);
+    padding-top: 25px;
+}
+
+.savinghope {
+    color: #005f73;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease-out;
+}
+
+.login h1 {
+    margin: 0;
+    padding: 20px 20px;
+    color: #fff;
+    text-align: center;
+
+}
+.login label {
+    color: #fff;
+    font-weight: bold;
+}
+.login input {
+    width:100%;
+    margin:10px 0px;
+}
+.login input[type="text"],
+.login input[type="password"] {
+    border:none;
+    outline:none;
+    height: 40px;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    font-size:16px;
+    color:white;
+}
+.login input[type="submit"] {
+    border:none;
+    outline:none;
+    color:#fff;
+    height:40px;
+    font-size:16px;
+    background: #005f73;
+    border-radius: 15px;
+    cursor:pointer;
+    margin-bottom:25px;
+    transition: .5s ease;
+}
+
+.login input[type="submit"]:hover {
+    transform: scale(1.2)
+}
+.login a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
