@@ -87,3 +87,9 @@ h1 {
     top: 100%;
     left: 100%;
 }
+
+.text-area:hover {
+    transform: translate(-5%, -5%) scale(1.2);
+    color: #ffcc00;
+    text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
+}
