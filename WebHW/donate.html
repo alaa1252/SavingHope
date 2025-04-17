@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="header.css">
   <link rel="stylesheet" href="footer.css">
   <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="donate.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
@@ -24,28 +25,20 @@
         <a href="donate.html" class="donate-btn">Donate</a>
         <a href="#sponsor">Sponsor</a>
         <a href="#volunteer">Volunteer</a>
-        <a href="login.html">Login</a>
-        <a href="signup.html">Sign Up</a>
+        <a href="#login">Login</a>
+        <a href="#signup">Sign Up</a>
       </nav>
     </div>
   </div>
 </header>
 
-<main class="homepage">
+<main class="donatepage">
   <div class="container">
-    <div class="content">
-      <h1 class="text-area">Bring a Smile to Those Who Need It</h1>
-      <div class="buttons">
-        <a href="#donate" class="btn-card">
-          <span>Donate</span>
-        </a>
-        <a href="#sponsor" class="btn-card">
-          <span>Sponsor</span>
-        </a>
-        <a href="#volunteer" class="btn-card">
-          <span>Volunteer</span>
-        </a>
-      </div>
+    <div class="button-group">
+      <button onclick="loadPage('general')">General</button>
+      <button onclick="loadPage('feed')">Feed</button>
+      <button onclick="loadPage('clothe')">Clothe</button>
+      <button onclick="loadPage('miscellaneous')">Miscellaneous</button>
     </div>
   </div>
 </main>

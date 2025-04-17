@@ -61,6 +61,9 @@ h1 {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+
+
+
 }
 
 
@@ -93,3 +96,4 @@ h1 {
     color: #ffcc00;
     text-shadow: 0 0 10px rgba(255, 204, 0, 0.7);
 }
+

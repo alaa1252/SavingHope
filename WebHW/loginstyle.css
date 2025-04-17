@@ -1,77 +1,120 @@
 body {
-    background: url("https://media.istockphoto.com/id/1176742436/photo/closeup-of-a-poor-staring-hungry-orphan-boy-in-a-refugee-camp-with-sad-expression-on-his-face.jpg?s=612x612&w=0&k=20&c=te_a3PMQxR9TwNn3YREUWM71kWTHQ7Mx31Q_4xifP7I=");
-      background-size:cover;
-    font-family: sans-serif;
+    background: url("https://media.istockphoto.com/id/1176742436/photo/closeup-of-a-poor-staring-hungry-orphan-boy-in-a-refugee-camp-with-sad-expression-on-his-face.jpg?s=612x612&w=0&k=20&c=te_a3PMQxR9TwNn3YREUWM71kWTHQ7Mx31Q_4xifP7I=") no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
 .login {
     width: 450px;
     height: 550px;
-    padding: 0px 50px;
+    padding: 30px 50px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
-    background: rgba(0,0,0,0.5);
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+    border-radius: 25px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
     padding-top: 25px;
 }
 
 .savinghope {
-    color: #005f73;
-    font-size: 55px;
+    color: #00b4d8;
+    font-size: 50px;
     font-weight: bold;
     text-align: center;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.4);
     margin-bottom: 20px;
     animation: fadeIn 2s ease-out;
 }
 
 .login h1 {
     margin: 0;
-    padding: 20px 20px;
+    padding: 10px 0;
     color: #fff;
     text-align: center;
-
+    font-size: 28px;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.7);
 }
+
 .login label {
     color: #fff;
     font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
+
 .login input {
-    width:100%;
-    margin:10px 0px;
+    width: 100%;
+    margin: 10px 0;
 }
+
 .login input[type="text"],
 .login input[type="password"] {
-    border:none;
-    outline:none;
+    border: none;
+    outline: none;
     height: 40px;
     background: transparent;
-    border-bottom: 1px solid #fff;
-    font-size:16px;
-    color:white;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    font-size: 16px;
+    color: white;
+    position: relative;
+    transition: border-color 0.4s ease, box-shadow 0.4s ease;
 }
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+    border-bottom: 2px solid #00bcd4;
+    box-shadow: 0 2px 10px rgba(0, 188, 212, 0.3);
+}
+
+.login input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.login input:focus::placeholder {
+    transform: translateY(-5px);
+    opacity: 0.8;
+}
+
 .login input[type="submit"] {
-    border:none;
-    outline:none;
-    color:#fff;
-    height:40px;
-    font-size:16px;
-    background: #005f73;
-    border-radius: 15px;
-    cursor:pointer;
-    margin-bottom:25px;
-    transition: .5s ease;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 45px;
+    font-size: 18px;
+    background: linear-gradient(135deg, #00b4d8, #0077b6);
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .login input[type="submit"]:hover {
-    transform: scale(1.2)
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #00b4d8;
 }
+
 .login a {
+    display: block;
+    text-align: center;
     text-decoration: none;
     color: #fff;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.login a:hover {
+    color: #90e0ef;
 }
 
 @keyframes fadeIn {
