@@ -1,0 +1,87 @@
+.container2 {
+    background-image: url(https://islamonlive.in/wp-content/smush-webp/2023/11/children-of-gaza-768x512.jpg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+}
+.container2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index:1;
+}
+
+.volunteer-info {
+    position: relative;
+    z-index:2;
+    color: #fff;
+    text-align: center;
+    padding: 3rem 2rem;
+
+
+}
+
+.volunteer-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #fff;;
+}
+
+.volunteer-text {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.volunteer-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 2rem;
+}
+
+.vol-card {
+    background: #003b4d;
+    padding: 1.5rem;
+    width: 250px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.vol-card:hover {
+    transform: translateY(-5px);
+}
+
+.vol-icon {
+    font-size: 2.5rem;
+    color: #ffcc00;
+    margin-bottom: 1rem;
+}
+
+.volunteer-btn {
+    display: inline-block;
+    background: #ffcc00;
+    color: black;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.volunteer-btn:hover {
+    background: #ffaa00;
+}

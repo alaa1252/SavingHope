@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donor Dashboard</title>
+    <link rel="stylesheet" href="dash.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="donate.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-content">
+        <div class="header-left">
+            <h1 class="project-title">SavingHope</h1>
+            <h2 class="project-subtitle">Help War Orphaned Children in Gaza</h2>
+        </div>
+
+        <div class="header-right">
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="donate.html" class="donate-btn">Donate</a>
+                <a href="#sponsor">Sponsor</a>
+                <a href="#volunteer">Volunteer</a>
+                <a href="#login">Login</a>
+                <a href="#signup">Sign Up</a>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="donation-stats">
+    <div class="stat-card">
+        <div class="stat-label">Total Donated</div>
+        <div class="stat-value">$1,250</div>
+        <div class="stat-desc">Since January 2024</div>
+    </div>
+    <div class="stat-card monthly">
+        <div class="stat-label">Monthly Sponsorship</div>
+        <div class="stat-value">$50</div>
+        <div class="stat-desc">Next payment: May 1, 2025</div>
+    </div>
+    <div class="stat-card impact">
+        <div class="stat-label">Your Impact</div>
+        <div class="stat-value">12 Months</div>
+        <div class="stat-desc">of continuous support</div>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-content">
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Your Sponsored Child</h2>
+                <div class="card-action">View full profile</div>
+            </div>
+            <div class="sponsored-child">
+                <img alt="Sponsored child" class="child-photo">
+                <h3 class="child-name">Ahmad</h3>
+                <div class="child-age">12 years old • Student</div>
+                <p>Ahmad wants to become an artist one day.. Your support provides him with education, healthcare, and nutrition.</p>
+
+                <div class="progress-container">
+                    <div class="progress-label">
+                        <span>Education Fund</span>
+                        <span>75%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+
+                <button class="btn btn-primary">Send Special Gift</button>
+
+                <div class="child-updates">
+                    <h4>Recent Updates</h4>
+                    <div class="update-item">
+                        <div class="update-date">April 12, 2025</div>
+                        <div class="update-content">Ahmad received your birthday gift and was thrilled! He drew a thank you card which will arrive in your mail soon.</div>
+                    </div>
+                    <div class="update-item">
+                        <div class="update-date">March 25, 2025</div>
+                        <div class="update-content">Ahmad completed his second term with excellent grades in Mathematics and Science.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Donation History</h2>
+                <div class="card-action">View all</div>
+            </div>
+            <table class="donation-table">
+                <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Type</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Apr 1, 2025</td>
+                    <td>Monthly Sponsorship</td>
+                    <td>$50.00</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Mar 1, 2025</td>
+                    <td>Monthly Sponsorship</td>
+                    <td>$50.00</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Feb 14, 2025</td>
+                    <td>Special Gift</td>
+                    <td>$25.00</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Feb 1, 2025</td>
+                    <td>Monthly Sponsorship</td>
+                    <td>$50.00</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                </tr>
+                <tr>
+                    <td>Jan 1, 2025</td>
+                    <td>Monthly Sponsorship</td>
+                    <td>$50.00</td>
+                    <td><span class="badge badge-success">Completed</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="card sidebar-section">
+            <h3 class="sidebar-title">Profile Information</h3>
+            <div>
+                <strong>Name:</strong> alaa<br>
+                <strong>Email:</strong> alaa@gmail.com<br>
+                <strong>Phone:</strong> 0595765834<br>
+                <strong>Member since:</strong> January 2024
+            </div>
+            <div style="margin-top: 15px;">
+                <button class="btn btn-outline">Edit Profile</button>
+            </div>
+        </div>
+
+        <div class="card sidebar-section">
+            <h3 class="sidebar-title">Upcoming Events</h3>
+            <div class="update-item">
+                <div class="update-date">May 15, 2025</div>
+                <div class="update-content"><strong>Donor Webinar:</strong> Meet our field workers in Ethiopia</div>
+            </div>
+            <div class="update-item">
+                <div class="update-date">June 1, 2025</div>
+                <div class="update-content"><strong>Letter Exchange:</strong> Next opportunity to write to Amar</div>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-title">Did you know?</div>
+            <p>You can increase your impact by setting up automatic donation matching with your employer. Many companies match charitable donations up to 100%!</p>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3 class="footer-heading">About SavingHope</h3>
+            <p>SavingHope is dedicated to providing care, education, and support for orphaned children in Gaza affected by war.</p>
+            <div class="contact">
+                <span><i class="fas fa-map-marker-alt"></i>Nablus, West Bank, Palestine</span>
+                <span><i class="fas fa-envelope"></i>info@najah.edu</span>
+                <span><i class="fas fa-phone"></i>+970 9 234 5113</span>
+            </div>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-section links">
+            <h3 class="footer-heading">Quick Links</h3>
+            <ul>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Our Impact</a></li>
+                <li><a href="#">Latest News</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section support">
+            <h3 class="footer-heading">Support Our Cause</h3>
+            <ul>
+                <li><a href="donate.html">Make a Donation</a></li>
+                <li><a href="#">Sponsor a child</a></li>
+                <li><a href="#">Volunteer With Us</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section newsletter">
+            <h3 class="footer-heading">Stay updated</h3>
+            <p>Subscribe to our newsletter for updates on our work and how you can help.</p>
+            <form action="#" method="post">
+                <input type="email" name="email" class="newsletter-input" placeholder="Enter Your Email">
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
