@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const card = document.createElement('div');
         card.className = 'orphan-profile-card';
         
-        const photoUrl = orphan.photo_url ? '/savinghope/' + orphan.photo_url : '/savinghope/images/placeholder.jpg';
+        const photoUrl = orphan.photo_url ? 'http://localhost/savinghope/' + orphan.photo_url : 'http://localhost/savinghope//images/placeholder.jpg';
         
         card.innerHTML = `
             <div class="profile-photo-section">
