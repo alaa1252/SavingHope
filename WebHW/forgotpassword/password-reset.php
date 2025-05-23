@@ -2,10 +2,10 @@
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email'])) {
     $email = $_POST['email'];
 
-    // Connect to DB
+
     $dp = new mysqli("localhost", "root", "", "security");
 
-    // Check if email exists
+
     $stmt = $dp->prepare("select * from members where Email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
