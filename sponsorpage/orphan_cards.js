@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.sponsorChild = function(orphanId) {
-        window.location.href = `sponsor-form.php?id=${orphanId}`;
+        window.location.href = `sponsor_form.php?id=${orphanId}`;
     };
 
     fetchOrphanData();
