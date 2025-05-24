@@ -1,7 +1,6 @@
-// dashboard.js
 document.addEventListener('DOMContentLoaded', function() {
     function fetchDashboardData() {
-        fetch('http://localhost/savinghope/dashboardpage/get_dashboard_data.php')
+        fetch('http://localhost/webcourse/WebHW/dashboardpage/get_dashboard_data.php', { credentials: 'include' })
             .then(response => {
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
@@ -14,7 +13,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 } else {
                     console.error('Error fetching dashboard data:', data.error);
                     displayErrorMessage('Failed to load dashboard data. Please try again later.');
+                    if (data.error === 'User not authenticated') {
+                    window.location.href = 'login.html';
                 }
+            }
             })
             .catch(error => {
                 console.error('Error fetching dashboard data:', error);
@@ -79,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const childPhoto = document.querySelector('.sponsored-child .child-photo');
         if (childPhoto) {
             const photoUrl = sponsorship.photo_url ? 
-                'http://localhost/savinghope/' + sponsorship.photo_url : 
-                'http://localhost/savinghope/images/placeholder.jpg';
+                'http://localhost/webcourse/WebHW/' + sponsorship.photo_url :
+                'http://localhost/webcourse/WebHW//images/placeholder.jpg';
             childPhoto.src = photoUrl;
             childPhoto.alt = sponsorship.child_name + "'s photo";
         }

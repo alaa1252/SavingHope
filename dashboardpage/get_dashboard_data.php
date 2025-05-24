@@ -1,8 +1,12 @@
 <?php
+session_start();
+
+require_once 'check_session.php';
+
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "savinghope";
+$dbname = "security";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -12,9 +16,15 @@ if ($conn->connect_error) {
 
 header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Credentials: true');
 
 try {
-    $current_user = isset($_GET['username']) ? $_GET['username'] : 'Alaa_444';
+    if (!isLoggedIn()) {
+        echo json_encode(['success' => false, 'error' => 'User not authenticated']);
+        exit();
+    }
+    
+    $current_user = $_SESSION['username'];
     
     $dashboard_data = [];
     
@@ -68,7 +78,7 @@ try {
     WHERE username = ? 
     ORDER BY donation_date DESC 
     LIMIT 5";
-    
+
     $stmt = $conn->prepare($sql_history);
     $stmt->bind_param("s", $current_user);
     $stmt->execute();
