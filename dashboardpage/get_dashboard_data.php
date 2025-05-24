@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require_once 'check_session.php';
+require_once '../check_session.php';
 
 $servername = "localhost";
 $username = "root";
@@ -15,15 +15,10 @@ if ($conn->connect_error) {
 }
 
 header('Content-Type: application/json');
-header('Access-Control-Allow-Origin: *');
+header('Access-Control-Allow-Origin: http://localhost');
 header('Access-Control-Allow-Credentials: true');
 
 try {
-    if (!isLoggedIn()) {
-        echo json_encode(['success' => false, 'error' => 'User not authenticated']);
-        exit();
-    }
-    
     $current_user = $_SESSION['username'];
     
     $dashboard_data = [];

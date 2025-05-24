@@ -8,13 +8,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                if (data.success) {
-                    updateDashboard(data.data);
-                } else {
-                    console.error('Error fetching dashboard data:', data.error);
-                    displayErrorMessage('Failed to load dashboard data. Please try again later.');
-                    if (data.error === 'User not authenticated') {
+                console.log('Dashboard data received:', data);
+            
+            if (data.success) {
+                updateDashboard(data.data);
+            } else {
+                console.error('Error fetching dashboard data:', data.error);
+                
+                if (data.error === 'User not authenticated') {
+                    console.log('User not authenticated, redirecting to login');
                     window.location.href = 'login.html';
+                } else {
+                    displayErrorMessage('Failed to load dashboard data. Please try again later.');
                 }
             }
             })
