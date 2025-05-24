@@ -8,64 +8,64 @@
     --danger: #E74C3C;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --rounded: 12px;
-  }
-  
-  * {
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
+}
+
+body {
     font-family: 'Roboto', 'sans-serif';
     background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
-  }
+}
 
-  .dashboard {
+.dashboard {
     display: grid;
     grid-template-columns: 3fr 1fr;
     gap: 30px;
-  }
-  
-  .main-content {
+}
+
+.main-content {
     display: flex;
     flex-direction: column;
     gap: 30px;
-  }
-  
-  .card {
+}
+
+.card {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     padding: 25px;
     transition: all 0.3s ease;
     margin-bottom: 30px;
-  }
-  
-  .card:hover {
+}
+
+.card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-  }
-  
-  .card-header {
+}
+
+.card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
     border-bottom: 2px solid #f4f4f9;
     padding-bottom: 15px;
-  }
-  
-  .card-title {
+}
+
+.card-title {
     font-size: 20px;
     font-weight: 600;
     color: #003b4d;
     position: relative;
-  }
-  
-  .card-title::after {
+}
+
+.card-title::after {
     content: '';
     position: absolute;
     bottom: -15px;
@@ -104,7 +104,7 @@
 .card-action:hover::after {
     width: 100%;
 }
-  
+
 .donation-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -148,12 +148,12 @@
     font-size: 14px;
     font-weight: 500;
 }
-  
-  .donation-history {
+
+.donation-history {
     margin-bottom: 20px;
-  }
-  
-  .donation-table {
+}
+
+.donation-table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 15px;
@@ -179,7 +179,7 @@
 .donation-table tr:hover {
     background-color: #f8f9fa;
 }
-  
+
 .badge {
     display: inline-block;
     padding: 3px 10px;
@@ -194,61 +194,61 @@
     color: #00a896;
     margin-bottom: 30px;
 }
-  
-  .sponsored-child {
+
+.sponsored-child {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-  }
-  
-  .child-photo {
+}
+
+.child-photo {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 15px;
     border: 5px solid var(--light);
-  }
-  
-  .child-name {
+}
+
+.child-name {
     font-size: 22px;
     font-weight: 600;
     margin-bottom: 5px;
     color: var(--primary);
-  }
-  
-  .child-age {
+}
+
+.child-age {
     color: #777;
     margin-bottom: 15px;
-  }
-  
-  .progress-container {
+}
+
+.progress-container {
     width: 100%;
     margin: 15px 0;
-  }
-  
-  .progress-label {
+}
+
+.progress-label {
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
     font-size: 14px;
-  }
-  
-  .progress-bar {
+}
+
+.progress-bar {
     height: 10px;
     background-color: #e9ecef;
     border-radius: 5px;
     overflow: hidden;
-  }
-  
-  .progress-fill {
+}
+
+.progress-fill {
     height: 100%;
     background-color: var(--accent);
     width: 75%;
-  }
-  
-  .btn {
+}
+
+.btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -259,36 +259,36 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
-  }
-  
-  .btn-primary {
+}
+
+.btn-primary {
     background-color: var(--primary);
     color: white;
-  }
-  
-  .btn-primary:hover {
+}
+
+.btn-primary:hover {
     background-color: #3a5080;
-  }
-  
-  .btn-outline {
+}
+
+.btn-outline {
     background-color: transparent;
     border: 2px solid var(--primary);
     color: var(--primary);
-  }
-  
-  .btn-outline:hover {
+}
+
+.btn-outline:hover {
     background-color: var(--primary);
     color: white;
-  }
-  
-  .payment-methods {
+}
+
+.payment-methods {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     margin-top: 15px;
-  }
-  
-  .payment-method {
+}
+
+.payment-method {
     border: 1px solid #e1e4e8;
     border-radius: var(--rounded);
     padding: 15px;
@@ -298,18 +298,18 @@
     width: calc(50% - 5px);
     cursor: pointer;
     transition: border-color 0.3s;
-  }
-  
-  .payment-method:hover {
+}
+
+.payment-method:hover {
     border-color: var(--accent);
-  }
-  
-  .payment-method.active {
+}
+
+.payment-method.active {
     border-color: var(--primary);
     background-color: rgba(72, 99, 160, 0.05);
-  }
-  
-  .payment-icon {
+}
+
+.payment-icon {
     width: 40px;
     height: 40px;
     background-color: #f0f2f5;
@@ -317,53 +317,53 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  
-  .payment-details {
+}
+
+.payment-details {
     flex: 1;
-  }
-  
-  .payment-name {
+}
+
+.payment-name {
     font-weight: 600;
     margin-bottom: 2px;
-  }
-  
-  .payment-exp {
+}
+
+.payment-exp {
     font-size: 12px;
     color: #777;
-  }
-  
-  .child-updates {
+}
+
+.child-updates {
     margin-top: 20px;
-  }
-  
-  .update-item {
+}
+
+.update-item {
     padding: 15px 0;
     border-bottom: 1px solid #e1e4e8;
-  }
-  
-  .update-date {
+}
+
+.update-date {
     font-size: 12px;
     color: #777;
     margin-bottom: 5px;
-  }
-  
-  .update-content {
+}
+
+.update-content {
     font-size: 14px;
-  }
-  
-  .sidebar-section {
+}
+
+.sidebar-section {
     margin-bottom: 20px;
-  }
-  
-  .sidebar-title {
+}
+
+.sidebar-title {
     font-size: 16px;
     font-weight: 600;
     margin-bottom: 15px;
     color: var(--primary);
-  }
-  
-  .tip-card {
+}
+
+.tip-card {
     background-color: rgba(255, 209, 102, 0.1);
     border-left: 4px solid #ffd166;
     padding: 15px;

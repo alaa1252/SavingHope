@@ -78,89 +78,63 @@ document.addEventListener('DOMContentLoaded', function() {
         return cardDiv;
     }
 
-    // UPDATED FUNCTION: Now checks login before donation
-    window.handleDonation = function(donationId, donationTitle, donationPrice) {
-        // Show loading state
+    window.handleDonation = function(donationId) {
         const button = event.target;
         const originalText = button.textContent;
         button.textContent = 'Checking...';
         button.disabled = true;
 
-        // Check if user is logged in
-        fetch('check_login_status.php', {
-            credentials:'include'
-        })
-            .then(response => response.json())
+        fetch('check_login_status.php', { credentials: 'include' })
+            .then(res => res.json())
             .then(data => {
                 if (data.logged_in) {
-                    // User is logged in - process donation directly
-                    processDonation(donationId, donationTitle, donationPrice, data.user_info);
+                    addDonation(donationId, data.user_info.username);
                 } else {
-                    // User not logged in - show login prompt
-                    if (confirm(`You need to login to donate. Would you like to login now?`)) {
-                        // Save donation info for after login
-                        sessionStorage.setItem('pendingDonation', JSON.stringify({
-                            id: donationId,
-                            title: donationTitle,
-                            price: donationPrice
-                        }));
+                    sessionStorage.setItem('pendingDonation', JSON.stringify({ donationId }));
+                    if (confirm('You need to login to donate. Go to login page now?')) {
                         window.location.href = 'login.html?redirect=' + encodeURIComponent(window.location.href);
                     }
                 }
             })
-            .catch(error => {
-                console.error('Login check failed:', error);
-                alert('Unable to verify login status. Please try again.');
+            .catch(err => {
+                alert('Failed to check login status. Please try again.');
+                console.error(err);
             })
             .finally(() => {
-                // Restore button state
                 button.textContent = originalText;
                 button.disabled = false;
             });
     };
 
-    // Process donation for logged-in users
-    function processDonation(donationId, donationTitle, donationPrice, userInfo) {
-        if (confirm(`Confirm donation of $${donationPrice} to "${donationTitle}"?`)) {
-            // Show processing state
-          //  const button = event.target;
-           // button.textContent = 'Processing...';
-          //  button.disabled = true;
+    function addDonation(donationId, username) {
+        const donationCard = document.querySelector(`[data-id="${donationId}"]`);
+        const donationTitle = donationCard.querySelector('.card-title').textContent;
+        const donationPrice = donationCard.querySelector('.card-price').textContent.replace(/[^0-9.]/g, '');
 
-            // Send donation to server
+        if (confirm(`Confirm donation of $${donationPrice} to "${donationTitle}"?`)) {
             fetch('process_donation.php', {
                 method: 'POST',
-                credentials:'include',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                credentials: 'include',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     donation_id: donationId,
+                    username: username,
                     donation_type: donationTitle,
                     amount: donationPrice
                 })
             })
-                .then(response => response.json())
+                .then(res => res.json())
                 .then(data => {
                     if (data.success) {
-                        // Success message
-                        alert(`Thank you ${userInfo.full_name}! Your donation of $${donationPrice} has been processed successfully.`);
-
-                        // Optional: Redirect to dashboard or show success page
-                      //  if (confirm('Would you like to view your dashboard to see all your donations?')) {
-                           // window.location.href = 'dashboard.html';
-                       // }
+                        alert(`Thank you for your donation of $${donationPrice}!`);
+                        sessionStorage.removeItem('pendingDonation');
                     } else {
-                        alert('Donation failed: ' + (data.error || 'Unknown error'));
+                        alert('Failed to process donation: ' + (data.error || 'Unknown error'));
                     }
                 })
-                .catch(error => {
-                    console.error('Donation processing failed:', error);
-                    alert('Donation processing failed. Please try again.');
-                })
-                .finally(() => {
-                  //  button.textContent = 'Donate Now';
-                   // button.disabled = false;
+                .catch(err => {
+                    alert('Error processing donation. Please try again later.');
+                    console.error(err);
                 });
         }
     }

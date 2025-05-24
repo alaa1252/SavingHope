@@ -13,6 +13,20 @@
 
 
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <script>
+        function checkAdminAccess() {
+            const password = prompt("Enter admin password:");
+            const correctPassword = "123";
+
+            if (password === correctPassword) {
+
+                window.location.href = "admin.html";
+            } else {
+                alert("Incorrect password. Access denied.");
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -32,6 +46,7 @@
                 <a href="volunteer.html">Volunteer</a>
                 <a href="login.html">Login</a>
                 <a href="signup.html">Sign Up</a>
+                <a href="#" onclick="checkAdminAccess()">Admin</a>
             </nav>
         </div>
     </div>
@@ -51,25 +66,25 @@
 
         <div class="faq">
             <input type="checkbox" id="faq2">
-            <label class="faq-title" for="faq2">a question herererererer</label>
+            <label class="faq-title" for="faq2">What inspired us to make this company?</label>
             <div class="faq-content">
-                <p>an answerrrr to q2 </p>
+                <p>What inspired us is the horrific scenes that we all have been witnessing over the last years and the very unfortunate conditions of the kids in Gaza.  </p>
             </div>
         </div>
 
         <div class="faq">
             <input type="checkbox" id="faq3">
-            <label class="faq-title" for="faq3"> question3 here q3 q3 q3 q3 </label>
+            <label class="faq-title" for="faq3"> Can donors provide physical donations instead of monetary ones?</label>
             <div class="faq-content">
-                <p>answer to q3 hererererere.</p>
+                <p>As of right now, it's a bit of a challenge to accept physical donations due to logistic reasons. Hopefully in the near future this will be sorted out. </p>
             </div>
         </div>
 
         <div class="faq">
             <input type="checkbox" id="faq4">
-            <label class="faq-title" for="faq4">Question4 herererererere?</label>
+            <label class="faq-title" for="faq4">Can we remotely volunteer to help the children?</label>
             <div class="faq-content">
-                <p>answer to q4444444444.</p>
+                <p>Depends on the field. If it's something that could be achieved online or remotely, this could work.</p>
             </div>
         </div>
 
@@ -88,18 +103,17 @@
                 <span><i class="fas fa-phone"></i>+970 9 234 5113</span>
             </div>
             <div class="socials">
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.najah.edu"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.najah.edu"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.najah.edu"><i class="fab fa-instagram"></i></a>
             </div>
         </div>
 
         <div class="footer-section links">
             <h3 class="footer-heading">Quick Links</h3>
             <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Impact</a></li>
-                <li><a href="#">Latest News</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+
                 <li><a href="faqs.html">FAQs</a></li>
             </ul>
         </div>
@@ -114,12 +128,9 @@
         </div>
 
         <div class="footer-section newsletter">
-            <h3 class="footer-heading">Stay updated</h3>
-            <p>Subscribe to our newsletter for updates on our work and how you can help.</p>
-            <form action="#" method="post">
-                <input type="email" name="email" class="newsletter-input" placeholder="Enter Your Email">
-                <button type="submit" class="newsletter-btn">Subscribe</button>
-            </form>
+            <h3 class="footer-heading">Keep Children in your prayers.</h3>
+            <p>Even if you can't donate or volunteer, a prayer goes a long way.</p>
+
         </div>
     </div>
 </footer>

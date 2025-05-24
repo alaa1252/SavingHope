@@ -1,4 +1,3 @@
-// dashboard.js
 document.addEventListener('DOMContentLoaded', function() {
     function fetchDashboardData() {
         fetch('http://localhost/webcourse/WebHW/dashboardpage/get_dashboard_data.php')
@@ -80,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (childPhoto) {
             const photoUrl = sponsorship.photo_url ?
                 'http://localhost/webcourse/WebHW/' + sponsorship.photo_url :
-                'http://localhost/webcourse/WebHW//images/placeholder.jpg';
+                'http://localhost/webcourse/WebHW/images/placeholder.jpg';
             childPhoto.src = photoUrl;
             childPhoto.alt = sponsorship.child_name + "'s photo";
         }

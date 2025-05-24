@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel - SavingHope Gaza</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="adminpage/admin.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="header-content">
+    <div class="header-left">
+      <h1 class="project-title">SavingHope</h1>
+      <h2 class="project-subtitle">Help War Orphaned Children in Gaza</h2>
+    </div>
+    
+    <div class="header-right">
+      <nav class="navbar">
+        <a href="index.html">Home</a>
+        <a href="donate.html" class="donate-btn">Donate</a>
+        <a href="sponsor.html">Sponsor</a>
+        <a href="volunteer.html">Volunteer</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="admin.html" class="admin-active">Admin</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main class="admin-container">
+  <div class="admin-header">
+    <h1 class="admin-title"><i class="fas fa-cog"></i> Admin Panel</h1>
+    <p class="admin-subtitle">Manage orphans and donations for SavingHope</p>
+  </div>
+
+  <div class="tab-container">
+    <button class="tab-button active" onclick="switchTab('orphans')">
+      <i class="fas fa-child"></i> Manage Orphans
+    </button>
+    <button class="tab-button" onclick="switchTab('donations')">
+      <i class="fas fa-heart"></i> Manage Donations
+    </button>
+  </div>
+
+  <div id="orphans-tab" class="tab-content active">
+    <div class="form-card">
+      <h3 style="color: #003b4d; margin-bottom: 20px; font-size: 24px;">
+        <i class="fas fa-plus-circle"></i> Add New Orphan
+      </h3>
+      
+      <div class="success-message" id="orphan-success">
+        <i class="fas fa-check-circle"></i> Orphan added successfully!
+      </div>
+      
+      <div class="error-message" id="orphan-error">
+        <i class="fas fa-exclamation-circle"></i> Please fill in all required fields.
+      </div>
+
+      <form id="orphan-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="orphan-name">Full Name <span class="required">*</span></label>
+            <input type="text" id="orphan-name" name="name" required maxlength="100">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-age">Age <span class="required">*</span></label>
+            <input type="number" id="orphan-age" name="age" required min="1" max="18">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-photo">Photo URL</label>
+            <input type="text" id="orphan-photo" name="photo_url" placeholder="images/pic.jpg">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-education">Education Level <span class="required">*</span></label>
+            <input type="text" id="orphan-education" name="education" required maxlength="255" placeholder="e.g., 5th Grade, excellent student">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-location">Location <span class="required">*</span></label>
+            <input type="text" id="orphan-location" name="location" required maxlength="255" placeholder="e.g., Gaza Children's Home">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-goal">Sponsorship Goal ($) <span class="required">*</span></label>
+            <input type="number" id="orphan-goal" name="sponsorship_goal" required min="100" step="0.01" value="1000.00">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-current">Current Sponsorship Amount ($)</label>
+            <input type="number" id="orphan-current" name="sponsorship_amount" min="0" step="0.01" value="0.00">
+          </div>
+          
+          <div class="form-group">
+            <label for="orphan-status">Status</label>
+            <select id="orphan-status" name="status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group full-width">
+          <label for="orphan-story">Story <span class="required">*</span></label>
+          <textarea id="orphan-story" name="story" required placeholder="Tell the orphan's story, background, and current situation..."></textarea>
+        </div>
+        
+        <div class="form-group full-width">
+          <label for="orphan-medical">Medical Needs</label>
+          <textarea id="orphan-medical" name="medical_needs" placeholder="Any medical conditions, treatments, or health requirements..."></textarea>
+        </div>
+        
+        <div class="form-group full-width">
+          <label for="orphan-interests">Interests & Hobbies</label>
+          <textarea id="orphan-interests" name="interests" placeholder="What does the child enjoy doing? Hobbies, favorite activities..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-plus"></i> Add Orphan
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <div id="donations-tab" class="tab-content">
+    <div class="form-card">
+      <h3 style="color: #003b4d; margin-bottom: 20px; font-size: 24px;">
+        <i class="fas fa-plus-circle"></i> Add New Donation Option
+      </h3>
+      
+      <div class="success-message" id="donation-success">
+        <i class="fas fa-check-circle"></i> Donation option added successfully!
+      </div>
+      
+      <div class="error-message" id="donation-error">
+        <i class="fas fa-exclamation-circle"></i> Please fill in all required fields.
+      </div>
+
+      <form id="donation-form">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="donation-title">Title <span class="required">*</span></label>
+            <input type="text" id="donation-title" name="title" required maxlength="255" placeholder="e.g., Emergency Food Packages">
+          </div>
+          
+          <div class="form-group">
+            <label for="donation-price">Price ($) <span class="required">*</span></label>
+            <input type="number" id="donation-price" name="price" required min="1" step="0.01" placeholder="25.00">
+          </div>
+          
+          <div class="form-group">
+            <label for="donation-image">Image URL</label>
+            <input type="text" id="donation-image" name="pic_url" placeholder="images/donate/pic.jpg">
+          </div>
+          
+          <div class="form-group">
+            <label for="donation-status">Status</label>
+            <select id="donation-status" name="status">
+              <option value="active">Active</option>
+              <option value="inactive">Inactive</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="form-group full-width">
+          <label for="donation-description">Description <span class="required">*</span></label>
+          <textarea id="donation-description" name="description" required placeholder="Describe what this donation provides and its impact..."></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">
+          <i class="fas fa-plus"></i> Add Donation Option
+        </button>
+      </form>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-section about">
+      <h3 class="footer-heading">About SavingHope</h3>
+      <p>SavingHope is dedicated to providing care, education, and support for orphaned children in Gaza affected by war.</p>
+      <div class="contact">
+        <span><i class="fas fa-map-marker-alt"></i> Nablus, West Bank, Palestine</span>
+        <span><i class="fas fa-envelope"></i> info@najah.edu</span>
+        <span><i class="fas fa-phone"></i> +970 9 234 5113</span>
+      </div>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+    
+    <div class="footer-section links">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul>
+        <li><a href="aboutus.html">About Us</a></li>
+
+        <li><a href="faqs.html">FAQs</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section support">
+      <h3 class="footer-heading">Support Our Cause</h3>
+      <ul>
+        <li><a href="donate.html">Make a Donation</a></li>
+        <li><a href="sponsor.html">Sponsor a child</a></li>
+        <li><a href="volunteer.html">Volunteer With Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section newsletter">
+      <h3 class="footer-heading">Keep Children in your prayers.</h3>
+      <p>Even if you can't donate or volunteer, a prayer goes a long way.</p>
+
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  function switchTab(tabName) {
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(tab => {
+      tab.classList.remove('active');
+    });
+    
+    const tabButtons = document.querySelectorAll('.tab-button');
+    tabButtons.forEach(button => {
+      button.classList.remove('active');
+    });
+    
+    document.getElementById(tabName + '-tab').classList.add('active');
+    
+    event.target.classList.add('active');
+  }
+
+  function validateForm(formId) {
+    const form = document.getElementById(formId);
+    const requiredFields = form.querySelectorAll('[required]');
+    let isValid = true;
+    
+    requiredFields.forEach(field => {
+      if (!field.value.trim()) {
+        field.style.borderColor = '#e74c3c';
+        isValid = false;
+      } else {
+        field.style.borderColor = '#e9ecef';
+      }
+    });
+    
+    return isValid;
+  }
+
+  function showMessage(messageId, show = true) {
+    const message = document.getElementById(messageId);
+    if (show) {
+      message.style.display = 'block';
+      setTimeout(() => {
+        message.style.display = 'none';
+      }, 5000);
+    } else {
+      message.style.display = 'none';
+    }
+  }
+
+  function resetForm(formId) {
+    document.getElementById(formId).reset();
+    const inputs = document.querySelectorAll('#' + formId + ' input, #' + formId + ' textarea, #' + formId + ' select');
+    inputs.forEach(input => {
+      input.style.borderColor = '#e9ecef';
+    });
+  }
+
+  document.getElementById('orphan-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!validateForm('orphan-form')) {
+      showMessage('orphan-error');
+      return;
+    }
+    
+    const formData = new FormData(this);
+    const submitBtn = this.querySelector('.submit-btn');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding Orphan...';
+    
+    fetch('adminpage/add_orphan.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById('orphan-success').innerHTML = 
+          '<i class="fas fa-check-circle"></i> ' + data.message;
+        showMessage('orphan-success');
+        resetForm('orphan-form');
+      } else {
+        document.getElementById('orphan-error').innerHTML = 
+          '<i class="fas fa-exclamation-circle"></i> ' + 
+          (data.error || 'An error occurred');
+        showMessage('orphan-error');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('orphan-error').innerHTML = 
+        '<i class="fas fa-exclamation-circle"></i> An error occurred while adding the orphan.';
+      showMessage('orphan-error');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-plus"></i> Add Orphan';
+    });
+  });
+
+  document.getElementById('donation-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (!validateForm('donation-form')) {
+      showMessage('donation-error');
+      return;
+    }
+    
+    const formData = new FormData(this);
+    const submitBtn = this.querySelector('.submit-btn');
+    
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Adding Donation...';
+    
+    fetch('adminpage/add_donation.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        document.getElementById('donation-success').innerHTML = 
+          '<i class="fas fa-check-circle"></i> ' + data.message;
+        showMessage('donation-success');
+        resetForm('donation-form');
+      } else {
+        document.getElementById('donation-error').innerHTML = 
+          '<i class="fas fa-exclamation-circle"></i> ' + 
+          (data.error || 'An error occurred');
+        showMessage('donation-error');
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      document.getElementById('donation-error').innerHTML = 
+        '<i class="fas fa-exclamation-circle"></i> An error occurred while adding the donation.';
+      showMessage('donation-error');
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = '<i class="fas fa-plus"></i> Add Donation Option';
+    });
+  });
+
+  function addRealTimeValidation() {
+    const inputs = document.querySelectorAll('input[required], textarea[required]');
+    inputs.forEach(input => {
+      input.addEventListener('blur', function() {
+        if (!this.value.trim()) {
+          this.style.borderColor = '#e74c3c';
+        } else {
+          this.style.borderColor = '#28a745';
+        }
+      });
+      
+      input.addEventListener('input', function() {
+        if (this.value.trim()) {
+          this.style.borderColor = '#e9ecef';
+        }
+      });
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', addRealTimeValidation);
+</script>
+
+</body>
+</html>

@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -14,7 +17,12 @@ header('Content-Type: application/json');
 header('Access-Control-Allow-Origin: *');
 
 try {
-    $current_user = isset($_GET['username']) ? $_GET['username'] : 'Alaa_444';
+    if (!isset($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+        echo json_encode(['success' => false, 'error' => 'User not logged in', 'redirect' => 'login.html']);
+        exit();
+    }
+
+    $current_user = $_SESSION['username'];
 
     $dashboard_data = [];
 
