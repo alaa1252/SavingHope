@@ -1,0 +1,100 @@
+:root {
+    --primary: #face21;
+    --text-dark: #333;
+    --text-light: #292828;
+    --bg-light: #f7f9fc;
+    --radius: 8px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust 0.5 to make darker/lighter */
+    z-index: -1; /* Keeps it behind the content */
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url(https://islamonlive.in/wp-content/smush-webp/2023/11/children-of-gaza-768x512.jpg.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-dark);
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 0;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    color: var(--primary);
+}
+
+.faq {
+    background-color: #fff;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.faq input[type="checkbox"] {
+    display: none;
+}
+
+.faq-title {
+    display: block;
+    padding: 18px 24px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    position: relative;
+    background: var(--primary);
+    color: var(--text-light);
+}
+
+.faq-title::after {
+    content: "+";
+    position: absolute;
+    right: 24px;
+    font-size: 1.5rem;
+    transition: transform var(--transition);
+}
+
+.faq input:checked + .faq-title::after {
+    content: "−";
+}
+
+.faq-content {
+    max-height: 0;
+    overflow: hidden;
+    background: #fefefe;
+    padding: 0 24px;
+    transition: max-height var(--transition), padding var(--transition);
+}
+
+.faq input:checked ~ .faq-content {
+    max-height: 200px;
+    padding: 20px 24px;
+}
+
+.faq-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}

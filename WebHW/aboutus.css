@@ -1,0 +1,101 @@
+:root {
+    --primary: #4e54c8;
+    --text-light: #ffd954;
+    --text-dark: #333;
+    --bg-light: #f4f4f4;
+    --radius: 10px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    line-height: 1.6;
+    margin: 0;
+    background: url('https://islamonlive.in/wp-content/smush-webp/2023/11/children-of-gaza-768x512.jpg.webp') center/cover no-repeat fixed;
+}
+
+/* Hero Section */
+.hero {
+    background: none;
+    height: 60vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: var(--text-light);
+    padding: 40px;
+    text-align: center;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* About Section */
+.about-content {
+    padding: 60px 20px;
+    background: transparent;
+}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    gap: 30px;
+    align-items: center;
+}
+
+.text {
+    flex: 1 1 50%;
+}
+
+.text h2 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+.text p {
+    margin-bottom: 16px;
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text, .image {
+        flex: 1 1 100%;
+    }
+}

@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (isset($_POST['Username']) && isset($_POST['Password'])) {
     $Username = $_POST['Username'];
 
@@ -9,13 +10,24 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
         $qryStr="select * from members where Username='$Username' and Password='$Password'";
         $result=$dp->query($qryStr);
         if ($result->num_rows == 1) {
-            // $_SESSION['Username'] = $Username;
+            // GET USER DATA
+            $user_data = $result->fetch_assoc();
+
+            // CREATE SESSION - STORE USER INFORMATION
+            $_SESSION['logged_in'] = true;
+            $_SESSION['username'] = $user_data['Username'];
+            $_SESSION['full_name'] = $user_data['FullName'];
+            $_SESSION['email'] = $user_data['Email'];
+            $_SESSION['phone'] = $user_data['PhoneNumber'];
+            $_SESSION['login_time'] = time();
+
+
             header("Location: dashboard.html");
             exit();
         } else {
             echo "<script>alert('Incorrect username or password.'); window.location.href = 'login.html';</script>";
         }
-       
+
 
         $dp->close();
 
