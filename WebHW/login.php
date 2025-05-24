@@ -2,7 +2,6 @@
 session_start();
 if (isset($_POST['Username']) && isset($_POST['Password'])) {
     $Username = $_POST['Username'];
-
     $Password = sha1($_POST['Password']);
 
     try {
@@ -19,6 +18,7 @@ if (isset($_POST['Username']) && isset($_POST['Password'])) {
             $_SESSION['full_name'] = $user_data['FullName'];
             $_SESSION['email'] = $user_data['Email'];
             $_SESSION['phone'] = $user_data['PhoneNumber'];
+            $_SESSION['member_id'] = $user_data['Username'];
             $_SESSION['login_time'] = time();
 
 

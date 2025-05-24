@@ -33,13 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateDashboard(data) {
         updateDonationStats(data);
-        
+
         updateSponsoredChild(data);
-        
+
         updateDonationHistory(data.donation_history);
-        
+
         updateProfileInfo(data.profile);
-        
+
         updateChildUpdates(data.child_updates);
     }
 
@@ -57,10 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const nextPaymentElement = document.querySelector('.stat-card.monthly .stat-desc');
         if (nextPaymentElement && data.sponsorship) {
             const paymentDate = new Date(data.sponsorship.next_payment_date);
-            const formattedDate = paymentDate.toLocaleDateString('en-US', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
+            const formattedDate = paymentDate.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
             });
             nextPaymentElement.textContent = 'Next payment: ' + formattedDate;
         }
@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const childPhoto = document.querySelector('.sponsored-child .child-photo');
         if (childPhoto) {
-            const photoUrl = sponsorship.photo_url ? 
+            const photoUrl = sponsorship.photo_url ?
                 'http://localhost/webcourse/WebHW/' + sponsorship.photo_url :
                 'http://localhost/webcourse/WebHW//images/placeholder.jpg';
             childPhoto.src = photoUrl;
